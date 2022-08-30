@@ -1,33 +1,21 @@
 
-import { useEffect } from 'react';
-import { useRef } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Meals from './components/Meals/Meals';
 
 
 
 
 function App() {
-const ref = useRef('red')
 
-
-useEffect(() => {
-  const currentDiv = ref.current.style
-  const timerColor = setInterval(() => {
-   currentDiv.background === 'red' 
-   ? (currentDiv.background = 'green')
-   : (currentDiv.background = 'red')
-
-  },1000)
-  return () => clearInterval(timerColor)
-},[])
 
   return (
-    <div className='App'>
-  
-  <div className='container' ref={ref}>
+    <main>
+      <Header/>
+      <Meals/>
+    </main>
+    
 
-  </div>
-    </div>
   );
 }
 
